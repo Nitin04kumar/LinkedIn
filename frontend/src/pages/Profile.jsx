@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import CreatePost from "../components/CreatePost";
+import { API_BASE_URL } from "../config/api";
 import "./Profile.css";
 
 const Profile = () => {
@@ -342,7 +343,7 @@ const Profile = () => {
                         <img
                           src={
                             user?.profilePicture
-                              ? `/uploads/${user.profilePicture}`
+                              ? `${API_BASE_URL}/uploads/${user.profilePicture}`
                               : "/default-avatar.png"
                           }
                           alt={user?.name}
@@ -358,7 +359,7 @@ const Profile = () => {
                       <p className="activity-content">{post.content}</p>
                       {post.image && (
                         <div className="activity-image">
-                          <img src={`/uploads/${post.image}`} alt="Post" />
+                          <img src={`${API_BASE_URL}/uploads/${post.image}`} alt="Post" />
                         </div>
                       )}
                       <div className="activity-stats">
