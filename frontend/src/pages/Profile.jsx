@@ -145,7 +145,7 @@ const Profile = () => {
                     <img
                       src={
                         user?.profilePicture
-                          ? `/uploads/${user.profilePicture}`
+                          ? `${API_BASE_URL}/uploads/${user.profilePicture}`
                           : "/default-avatar.png"
                       }
                       alt={user?.name}
